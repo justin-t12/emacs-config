@@ -50,4 +50,4 @@
 ;(unpin! t)
 ;
 (package! modus-themes)
-(package! ef-themeS)
+(package! ef-themes)
