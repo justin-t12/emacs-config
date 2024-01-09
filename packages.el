@@ -51,3 +51,5 @@
 ;
 (package! modus-themes)
 (package! ef-themes)
+(package! platformio-mode)
+(package! ccls)
