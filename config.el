@@ -82,3 +82,25 @@
 (add-hook 'c++-mode-hook (lambda ()
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
+
+(setq ispell-program-name "aspell")
+(setq sentence-end-double-space nil)
+
+(set-email-account! "outlook"
+                    '((mu4e-sent-folder       . "/outlook/SentItems")
+                      (mu4e-drafts-folder     . "/outlook/Drafts")
+                      (mu4e-trash-folder      . "/outlook/DeletedItems")
+                      (mu4e-refile-folder     . "/outlook/Archive")
+                      (user-mail-address      . "justin.t12@outlook.com")
+                      (smtpmail-smtp-user     . "justin.t12@outlook.com")
+                      (mu4e-compose-signature . "---\nJustin Tussey"))
+                    t)
+
+
+
+(after! mu4e
+  (setq sendmail-program (executable-find "msmtp")
+	send-mail-function #'smtpmail-send-it
+	message-sendmail-f-is-evil t
+	message-sendmail-extra-arguments '("--read-envelope-from")
+	message-send-mail-function #'message-send-mail-with-sendmail))

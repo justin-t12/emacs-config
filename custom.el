@@ -6,6 +6,8 @@
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(org-agenda-files '("~/Sync/school.org"))
  '(package-selected-packages '(latex-preview-pane))
+ '(smtpmail-smtp-server "smtp-mail.outlook.com")
+ '(smtpmail-smtp-service 25)
  '(warning-suppress-log-types '((initialization)))
  '(warning-suppress-types '((initialization) (defvaralias))))
 (custom-set-faces
