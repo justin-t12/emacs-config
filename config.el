@@ -83,13 +83,17 @@
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
 
+;;setting spell check program
 (setq ispell-program-name "aspell")
+
+;;setting sentance interaction behavior
 (setq sentence-end-double-space nil)
 
+;;email
 (set-email-account! "outlook"
-                    '((mu4e-sent-folder       . "/outlook/SentItems")
+                    '((mu4e-sent-folder       . "/outlook/Sent")
                       (mu4e-drafts-folder     . "/outlook/Drafts")
-                      (mu4e-trash-folder      . "/outlook/DeletedItems")
+                      (mu4e-trash-folder      . "/outlook/Deleted")
                       (mu4e-refile-folder     . "/outlook/Archive")
                       (user-mail-address      . "justin.t12@outlook.com")
                       (smtpmail-smtp-user     . "justin.t12@outlook.com")
@@ -104,3 +108,7 @@
 	message-sendmail-f-is-evil t
 	message-sendmail-extra-arguments '("--read-envelope-from")
 	message-send-mail-function #'message-send-mail-with-sendmail))
+
+;; LaTex
+(setq +latex-viewers nil)
+(map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)
