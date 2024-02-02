@@ -110,5 +110,5 @@
 	message-send-mail-function #'message-send-mail-with-sendmail))
 
 ;; LaTex
-(setq +latex-viewers nil)
+(setq +latex-viewers '(pdf-tools))
 (map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)

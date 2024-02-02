@@ -52,4 +52,5 @@
 (package! modus-themes)
 (package! ef-themes)
 (package! platformio-mode)
+(package! lsp-intellij)
 (package! ccls)
