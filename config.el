@@ -76,6 +76,7 @@
 ;; they are implemented.
 
 (require 'platformio-mode)
+(global-whitespace-mode 1)
 
 ;; Enable ccls for all c++ files, and platformio-mode only
 ;; when needed (platformio.ini present in project root).
