@@ -82,6 +82,9 @@
 ;; when needed (platformio.ini present in project root).
 ;; pio project init --ide emacs --board (board name)
 ;; pio run -t compiledb
+;; Add lines to .ccls to make sure header file are parsed as hpp/hh
+;; %h -x
+;; %h c++-header
 (add-hook 'c++-mode-hook (lambda ()
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
