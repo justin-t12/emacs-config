@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'modus-operandi-deuteranopia)
+(setq doom-theme 'nothing)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -76,7 +76,7 @@
 ;; they are implemented.
 
 (require 'platformio-mode)
-(global-whitespace-mode 1)
+;; (global-whitespace-mode 1)
 
 ;; Enable ccls for all c++ files, and platformio-mode only
 ;; when needed (platformio.ini present in project root).
@@ -90,9 +90,9 @@
                            (platformio-conditionally-enable)))
 
 ;;setting spell check program
-(setq ispell-program-name "aspell")
+;;(setq ispell-program-name "aspell")
 
-;;setting sentance interaction behavior
+;;setting sentence interaction behavior
 (setq sentence-end-double-space nil)
 
 ;;email
@@ -118,3 +118,9 @@
 ;; LaTex
 (setq +latex-viewers '(pdf-tools))
 (map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)
+
+;; Lua lsp stuff
+(setq lsp-lua-workspace-preload-file-size 200)
+
+;; minions (reduces modes display on mode line)
+(minions-mode 1)

@@ -51,7 +51,12 @@
                                         ;
 (package! modus-themes)
 (package! ef-themes)
+(package! tok-theme)
+(package! nothing-theme)
+(package! stimmung-themes)
+(package! plain-theme)
 (package! platformio-mode)
 (package! elfeed-web)
 (package! lsp-intellij)
 (package! ccls)
+(package! minions)
