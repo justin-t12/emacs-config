@@ -49,11 +49,17 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
                                         ;(unpin! t)
                                         ;
+
+(package! colorless-themes:
+  :recipe (:host github :repo "lthms/colorless-themes.el"
+           :files ("colorless-themes.el" "*.el")))
 (package! modus-themes)
 (package! ef-themes)
 (package! tok-theme)
 (package! nothing-theme)
 (package! stimmung-themes)
+(package! punpun-themes)
+(package! nofrils-acme-theme)
 (package! plain-theme)
 (package! platformio-mode)
 (package! elfeed-web)

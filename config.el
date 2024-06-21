@@ -75,7 +75,24 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(require 'platformio-mode)
+;; (use-package! stimmung-themes
+;;   :demand   t
+;;   :custom
+;;   (stimmung-themes-comment 'none)
+;;   (stimmung-themes-type 'none :italic? t)
+
+;; (use-package! acme-theme
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   ;; variables to configure
+;;   (setq acme-theme-gray-rainbow-delimiters nil)
+;;   (setq acme-theme-more-syntax-hl nil))
+
+
+;; minions (reduces modes display on mode line)
+(minions-mode 1)
+
 ;; (global-whitespace-mode 1)
 
 ;; Enable ccls for all c++ files, and platformio-mode only
@@ -85,6 +102,7 @@
 ;; Add lines to .ccls to make sure header file are parsed as hpp/hh
 ;; %h -x
 ;; %h c++-header
+(require 'platformio-mode)
 (add-hook 'c++-mode-hook (lambda ()
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
@@ -122,5 +140,3 @@
 ;; Lua lsp stuff
 (setq lsp-lua-workspace-preload-file-size 200)
 
-;; minions (reduces modes display on mode line)
-(minions-mode 1)
