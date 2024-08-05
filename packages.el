@@ -50,17 +50,24 @@
                                         ;(unpin! t)
                                         ;
 
-(package! colorless-themes:
-  :recipe (:host github :repo "lthms/colorless-themes.el"
-           :files ("colorless-themes.el" "*.el")))
+;; (package! colorless-themes:
+;;   :recipe (:host github :repo "lthms/colorless-themes.el"
+;;            :files ("colorless-themes.el" "*.el")))
+
+
+;; (package! colorless-themes:
+;;   :recipe (:local-repo "colorless-themes"
+;;            :build (:not compile)))
+(package! lambda-themes:
+  :recipe (:host github :repo "lambda-emacs/lambda-themes"))
 (package! modus-themes)
 (package! ef-themes)
 (package! tok-theme)
 (package! nothing-theme)
 (package! stimmung-themes)
 (package! punpun-themes)
-(package! nofrils-acme-theme)
 (package! plain-theme)
+(package! spacemacs-theme)
 (package! platformio-mode)
 (package! elfeed-web)
 (package! lsp-intellij)

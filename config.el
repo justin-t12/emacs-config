@@ -40,6 +40,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
+;;(setq org-directory "/mnt/c/Users/apoll/Sync/")
 (setq org-directory "~/org/")
 
 
@@ -75,20 +76,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; (use-package! stimmung-themes
-;;   :demand   t
-;;   :custom
-;;   (stimmung-themes-comment 'none)
-;;   (stimmung-themes-type 'none :italic? t)
-
-;; (use-package! acme-theme
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   ;; variables to configure
-;;   (setq acme-theme-gray-rainbow-delimiters nil)
-;;   (setq acme-theme-more-syntax-hl nil))
-
+(setq evil-snipe-scope 'visible)
 
 ;; minions (reduces modes display on mode line)
 (minions-mode 1)
@@ -113,27 +101,8 @@
 ;;setting sentence interaction behavior
 (setq sentence-end-double-space nil)
 
-;;email
-;; (set-email-account! "outlook"
-;;                     '((mu4e-sent-folder       . "/outlook/Sent")
-;;                       (mu4e-drafts-folder     . "/outlook/Drafts")
-;;                       (mu4e-trash-folder      . "/outlook/Deleted")
-;;                       (mu4e-refile-folder     . "/outlook/Archive")
-;;                       (user-mail-address      . "justin.t12@outlook.com")
-;;                       (smtpmail-smtp-user     . "justin.t12@outlook.com")
-;;                       (mu4e-compose-signature . "---\nJustin Tussey"))
-;;                     t)
-
-
-
-;; (after! mu4e
-;;   (setq sendmail-program (executable-find "msmtp")
-;; 	send-mail-function #'smtpmail-send-it
-;; 	message-sendmail-f-is-evil t
-;; 	message-sendmail-extra-arguments '("--read-envelope-from")
-;; 	message-send-mail-function #'message-send-mail-with-sendmail))
-
-;; LaTex
+;; LaTeX
+(setq TeX-command-default "laTeXMk")
 (setq +latex-viewers '(pdf-tools))
 (map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)
 
