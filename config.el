@@ -40,8 +40,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-;;(setq org-directory "/mnt/c/Users/apoll/Sync/")
-(setq org-directory "~/org/")
+;; (setq org-directory "/mnt/c/Users/apoll/Sync/")
+(setq org-directory "~/Sync/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -109,3 +109,5 @@
 ;; Lua lsp stuff
 (setq lsp-lua-workspace-preload-file-size 200)
 
+;; Auto close date for org todo items
+(setq org-log-done 'time)
