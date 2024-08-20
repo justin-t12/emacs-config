@@ -110,4 +110,8 @@
 (setq lsp-lua-workspace-preload-file-size 200)
 
 ;; Auto close date for org todo items
-(setq org-log-done 'time)
+;; (setq org-log-done 'time)
+(setq org-log-done 'note)
+
+;; disable lsp lenses
+(setq lsp-lens-enable nil)
