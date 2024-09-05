@@ -95,6 +95,14 @@
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
 
+;; verilog lsp-mode setup
+(add-hook 'verilog-mode-local-vars-hook #'lsp!)
+(setq verilog-linter "verible-verilog-lint")
+(setq verilog-compiler "iverilog")
+(setq verilog-tool 'verilog-compiler)
+(setq verilog-simulator "vvp")
+
+
 ;;setting spell check program
 ;;(setq ispell-program-name "aspell")
 
@@ -109,9 +117,21 @@
 ;; Lua lsp stuff
 (setq lsp-lua-workspace-preload-file-size 200)
 
-;; Auto close date for org todo items
-;; (setq org-log-done 'time)
-(setq org-log-done 'note)
-
 ;; disable lsp lenses
 (setq lsp-lens-enable nil)
+
+;; Auto close date for org todo items
+;; (setq org-log-done 'time)
+(after! org
+  (setq org-log-done 'note)
+  (setq org-capture-templates
+    '(("t" "Todo" entry
+     (file+headline +org-capture-todo-file "Todo")
+     "* TODO  %?\n%i" :prepend t)
+    ("n" "Notes" entry
+     (file+headline +org-capture-notes-file "Notes")
+     "* %u %?\n%i" :prepend t))))
+;; Setting up org-capture files
+(setq +org-capture-todo-file "inbox.org")
+(setq +org-capture-notes-file "inbox.org")
+
