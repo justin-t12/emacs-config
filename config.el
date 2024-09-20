@@ -100,7 +100,10 @@
 (setq verilog-linter "verible-verilog-lint")
 (setq verilog-compiler "iverilog")
 (setq verilog-tool 'verilog-compiler)
+;; (setq verilog-tool 'verilog-linter)
 (setq verilog-simulator "vvp")
+(setq verilog-indent 2)
+(setq verilog-indent-level-module 2)
 
 
 ;;setting spell check program
@@ -110,7 +113,7 @@
 (setq sentence-end-double-space nil)
 
 ;; LaTeX
-(setq TeX-command-default "laTeXMk")
+;; (setq TeX-command-default "laTeXMk")
 (setq +latex-viewers '(pdf-tools))
 (map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)
 
