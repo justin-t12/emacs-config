@@ -37,6 +37,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
+;; (setq display-line-numbers-type 'visual)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -95,6 +96,13 @@
                            (lsp-deferred)
                            (platformio-conditionally-enable)))
 
+;; Grammarly LSP mode stuff
+;; (use-package! lsp-grammarly
+;;   :ensure t
+;;   :hook (text-mode . (lambda ()
+;;                        (require 'lsp-grammarly)
+;;                        (lsp-deferred))))  ; or lsp
+
 ;; verilog lsp-mode setup
 (add-hook 'verilog-mode-local-vars-hook #'lsp!)
 (setq verilog-linter "verible-verilog-lint")
@@ -102,8 +110,36 @@
 (setq verilog-tool 'verilog-compiler)
 ;; (setq verilog-tool 'verilog-linter)
 (setq verilog-simulator "vvp")
-(setq verilog-indent 2)
-(setq verilog-indent-level-module 2)
+;; (setq verilog-indent 2)
+;; (setq verilog-indent-level-module 2)
+
+;; (use-package verilog-ext
+;;   :hook ((verilog-mode . verilog-ext-mode))
+;;   :init
+;;   ;; Can also be set through `M-x RET customize-group RET verilog-ext':
+;;   ;; Comment out/remove the ones you do not need
+;;   (setq verilog-ext-feature-list
+;;         '(font-lock
+;;           xref
+;;           capf
+;;           hierarchy
+;;           lsp
+;;           flycheck
+;;           beautify
+;;           navigation
+;;           template
+;;           formatter
+;;           compilation
+;;           imenu
+;;           which-func
+;;           hideshow
+;;           typedefs
+;;           time-stamp
+;;           block-end-comments
+;;           ports))
+;;   :config
+;;   (verilog-ext-mode-setup))
+
 
 
 ;;setting spell check program
@@ -123,10 +159,17 @@
 ;; disable lsp lenses
 (setq lsp-lens-enable nil)
 
-;; Auto close date for org todo items
-;; (setq org-log-done 'time)
+;; get writegood to shut up about passive voice
+;; (setq writegood-passive-voice-irregulars nil)
+
+
+;; org config options
 (after! org
+;; Remove unnessecary deadlines updates in agenda view
+  (setq org-deadline-warning-days 5)
+;; Auto close date for org todo items
   (setq org-log-done 'note)
+;; capture templates
   (setq org-capture-templates
     '(("t" "Todo" entry
      (file+headline +org-capture-todo-file "Todo")
@@ -138,3 +181,8 @@
 (setq +org-capture-todo-file "inbox.org")
 (setq +org-capture-notes-file "inbox.org")
 
+;; set up tab behavior
+(setq tab-always-indent t)
+
+;; pdfgrep setup
+(require 'pdfgrep)

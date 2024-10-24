@@ -58,6 +58,10 @@
 ;; (package! colorless-themes:
 ;;   :recipe (:local-repo "colorless-themes"
 ;;            :build (:not compile)))
+;; (package! verilog-ext)
+(package! mips-mode)
+(package! pdfgrep)
+;; (package! lsp-grammarly)
 (package! lambda-themes:
   :recipe (:host github :repo "lambda-emacs/lambda-themes"))
 (package! modus-themes)
