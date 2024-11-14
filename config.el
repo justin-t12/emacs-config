@@ -15,6 +15,8 @@
 ;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
 ;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
+
+
 ;; - `doom-unicode-font' -- for unicode glyphs
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
@@ -32,7 +34,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'nothing)
+(setq doom-theme 'modus-operandi)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -77,12 +79,21 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
+;; set the warning level to error to stop unneeded warning messages
+(setq warning-minimum-level :error)
+
+;; disable compilation mode from being a popup and instead be a standard window
+(set-popup-rule! "^\\*compilation\\*" :ignore t)
+
+;; set the scope of f, t, and evil-snipe to everything below and including the current line
 (setq evil-snipe-scope 'visible)
 
 ;; minions (reduces modes display on mode line)
 (minions-mode 1)
 
-;; (global-whitespace-mode 1)
+;; pdfgrep setup
+(require 'pdfgrep)
 
 ;; Enable ccls for all c++ files, and platformio-mode only
 ;; when needed (platformio.ini present in project root).
@@ -110,40 +121,6 @@
 (setq verilog-tool 'verilog-compiler)
 ;; (setq verilog-tool 'verilog-linter)
 (setq verilog-simulator "vvp")
-;; (setq verilog-indent 2)
-;; (setq verilog-indent-level-module 2)
-
-;; (use-package verilog-ext
-;;   :hook ((verilog-mode . verilog-ext-mode))
-;;   :init
-;;   ;; Can also be set through `M-x RET customize-group RET verilog-ext':
-;;   ;; Comment out/remove the ones you do not need
-;;   (setq verilog-ext-feature-list
-;;         '(font-lock
-;;           xref
-;;           capf
-;;           hierarchy
-;;           lsp
-;;           flycheck
-;;           beautify
-;;           navigation
-;;           template
-;;           formatter
-;;           compilation
-;;           imenu
-;;           which-func
-;;           hideshow
-;;           typedefs
-;;           time-stamp
-;;           block-end-comments
-;;           ports))
-;;   :config
-;;   (verilog-ext-mode-setup))
-
-
-
-;;setting spell check program
-;;(setq ispell-program-name "aspell")
 
 ;;setting sentence interaction behavior
 (setq sentence-end-double-space nil)
@@ -161,7 +138,6 @@
 
 ;; get writegood to shut up about passive voice
 ;; (setq writegood-passive-voice-irregulars nil)
-
 
 ;; org config options
 (after! org
@@ -181,8 +157,9 @@
 (setq +org-capture-todo-file "inbox.org")
 (setq +org-capture-notes-file "inbox.org")
 
+;; stop org-noter from auto narrowing to the wrong spot
+(setq org-noter-disable-narrowing t)
+
 ;; set up tab behavior
 (setq tab-always-indent t)
 
-;; pdfgrep setup
-(require 'pdfgrep)
