@@ -52,28 +52,51 @@
 
 ;; (package! colorless-themes:
 ;;   :recipe (:host github :repo "lthms/colorless-themes.el"
-;;            :files ("colorless-themes.el" "*.el")))
+;;           :files ("colorless-themes.el" "*.el")))
 
 
 ;; (package! colorless-themes:
 ;;   :recipe (:local-repo "colorless-themes"
 ;;            :build (:not compile)))
-;; (package! verilog-ext)
-(package! mips-mode)
+;; (package! ox-latex)
+;; (package! hyperbole)
+;; (package! mips-mode)
 (package! pdfgrep)
+
+;; cursor centering stuff
+(package! centered-cursor-mode)
+
+;; Nice scrolling
+;; (package! ultra-scroll:
+;;   :recipe (:host github :repo "jdtsmith/ultra-scroll"
+;;            :files ("ultra-scroll.el")))
+
+;; Elixir stuff not in the module
+;; (package! inf-elixir)
+;; (package! dap-elixir)
+
 ;; (package! lsp-grammarly)
-(package! lambda-themes:
-  :recipe (:host github :repo "lambda-emacs/lambda-themes"))
-(package! modus-themes)
-(package! ef-themes)
-(package! tok-theme)
+;; (package! color-theme-modern)
+;; (package! kaolin-themes)
+;; (package! lavender-theme)
+;; (package! lavenderless-theme)
+(package! phoenix-dark-pink-theme)
+;; (package! lambda-themes:
+;;   :recipe (:host github :repo "lambda-emacs/lambda-themes"))
+;; (package! modus-themes)
+;; (package! standard-themes)
+;; (package! ef-themes)
+;; (package! tok-theme)
 (package! nothing-theme)
-(package! stimmung-themes)
-(package! punpun-themes)
-(package! plain-theme)
-(package! spacemacs-theme)
+;; (package! eziam-themes)
+;; (package! minimal-theme)
+(package! gruber-darker-theme)
+;; (package! stimmung-themes)
+;; (package! punpun-themes)
+;; (package! plain-theme)
+;; (package! spacemacs-theme)
 (package! platformio-mode)
-(package! elfeed-web)
-(package! lsp-intellij)
-(package! ccls)
+;;(package! elfeed-web)
+;; (package! lsp-intellij)
+;; (package! ccls)
 (package! minions)
